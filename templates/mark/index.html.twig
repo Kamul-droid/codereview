@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mark index{% endblock %}
+
+{% block body %}
+<section class="hero-section hero-section-full-height">
+    <div class="container-fluid">
+        <div class="row">
+
+            <h1>Mes notes</h1>
+
+            <div class="container text-center col-md-10">
+                <table class="table table-responsive table-sm">
+                    <thead>
+                        <tr>
+                            
+                            <th>Date de soumission</th>
+                            <th>Exercice</th>
+                            <th>Score</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for mark in marks %}
+                        <tr>
+                            <td>{{ mark.startedAt|date("d/m/Y H:m:s") }}</td>
+                            <td>{{ mark.exo.nom}}</td>
+                            <td>{{ mark.score }}</td>
+                            
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="3">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+    
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

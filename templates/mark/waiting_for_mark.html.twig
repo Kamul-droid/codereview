@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+{% block title %}
+   
+{% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="" style="margin-top:150px; margin-bottom: 50px;">
+
+    </div>
+    <div class="row align-items-center justify-content-center">
+
+       
+        <div class="col-md-8">
+        {% if state == 'start' %}
+            
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                </div>
+            </div>
+            <div class="h3">
+                <p>En attente de correction</p>
+            </div>
+                    
+        {% endif %}
+        {% if state == 'process' %}
+             <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                </div>
+            </div>
+            <div class="h3">
+                <p>Correction en cours</p>
+            </div>
+        {% endif %}
+        {% if state == 'finish' %}
+             <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                </div>
+            </div>
+            <div class="h3">
+                <p>Correction terminé</p>
+            </div>
+            <div class="col-md-4 btn btn-secondary">
+            <a href="{{path('app_mark_index')}}" style="color:white;">Afficher la note</a>
+        </div>
+        {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="" style="margin-top:550px; margin-bottom: 450px;">
+   
+</div>
+{% endblock %}

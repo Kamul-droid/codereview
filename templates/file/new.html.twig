@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New File{% endblock %}
+
+{% block body %}
+   
+
+    <section class="about-section section-padding">
+                     
+                
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-md-5 col-12">
+                <img src="{{asset('assets/images/télécharger-logiciel.jpg')}}" class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
+            </div>
+
+                <div class="col-lg-5 col-md-7 col-12">
+                    <div class="custom-text-block">
+                        <h2 class="mb-0">Votre fichier</h2>
+                        <div class="card" >
+                                {{ include('file/_form.html.twig') }}
+                        <div>
+                            
+
+                            
+                    </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    
+
+
+    <a href="{{ path('app_file_index') }}">back to list</a>
+{% endblock %}

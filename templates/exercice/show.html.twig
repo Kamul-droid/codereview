@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Exercice{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-lg-10 col-md-10 mb-4 mb-lg-0 text-center">
+
+        <table class="table card">
+            <tbody>
+                <tr>
+                    <th></th>
+                    <td>
+                        {% for image in exercice.images %}
+
+                            <div class="container col md5">
+                                <img src="{{asset('/uploads/' ~ image.name)}}" alt="article" width="450" , height="250"> 
+                            </div>
+
+                        {% endfor %} </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>{#{ exercice.id }#}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>{{ exercice.nom }}</td>
+                </tr>
+                <tr>
+                    <th>Catégorie</th>
+                    <td>{{ exercice.description }}</td>
+                </tr>
+                <tr>
+                    <th style="">Problème</th>
+                    <td >{{ exercice.content }}</td>
+                </tr>
+                <tr>
+                    <th style="color:azure; width:35px;"></th>
+                
+                    
+                </tr>
+                
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col-lg-2  mb-lg-0">
+        <p>      
+            <a style="color:red;" href="{{ path('app_file_new',{'id': exercice.id}) }}" class="btn btn-warning card ">Soumettre une réponse</a>
+        </p>
+        <p>
+            <a style="color:blue;" href="{{ path('app_exercice_index') }}" class="btn btn-warning card ">Retour</a>
+         </p>
+    </div>
+</div>
+    {# <a href="{{ path('app_exercice_edit', {'id': exercice.id}) }}">edit</a>
+
+    {{ include('exercice/_delete_form.html.twig') }} #}
+{% endblock %}

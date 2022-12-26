@@ -1,0 +1,71 @@
+<div class="container-fluid px-0">	
+    <header>
+        <div class="shape">
+        </div>
+        <!-- Navbar -->	
+        <nav class="navbar fixed-top navbar-expand-lg navbar-transparent"> 
+             
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span> 
+                </button> 
+                <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+                    <ul class="navbar-nav mr-auto"> 
+                        <li class="nav-item active">
+                                <a class="nav-link" href="{{path('app_index')}}">ACCEUIL <span class="sr-only"></span></a>
+                         </li> 
+                        {% if user is null %}
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{path('app_login')}}">CONNEXION</a> </li> 
+                        <li class="nav-item"> 
+                            <a class="nav-link" href="{{path('app_register')}}">INSCRIPTION</a>
+                        </li> 
+                        {% else %}
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{path('app_logout')}}">DECONNEXION</a> </li> 
+                        <li class="nav-item"> 
+                        
+                        <li class="nav-item"> <a class="nav-link" href="{{path('app_mark_index')}}">NOTES</a> </li> 
+                        {% endif %}
+                    </ul> 
+                </div>
+        </nav>	<!-- ./ end of navbar -->	
+          
+    </header>
+    <br>
+    <br>
+    <br>
+    {%for label, messages in app.flashes%}
+    <div class="container card col-md-5 ">
+        <div class="alert alert-{{label}}">
+            {% for message in messages %}
+
+            <p>{{message}}</p>
+
+            {% endfor %}
+        </div>
+        
+    </div>
+    {% endfor %}	
+</div>
+
+<div class="container">	
+    <div class="row">	
+        <div class="col-md-6 left-side">	
+            <img src="{#{asset('assets/images/codereview.png')}#}" class="w-100">	
+        </div>	
+        <div class="col-md-6 right-side">	
+            <h1 style="color:white !important;">CODE REVIEW</h1>	
+            <div class="text-center">	
+            <a class="nav-link" href="{{path('app_login')}}">
+                <button class="btn order-button">CONNEXION</button>	
+            </a>
+            <a class="nav-link" href=" {{path('app_register')}} ">
+                <button class="btn order-button">INSCRIPTION</button>	
+            </a>
+
+               
+
+            </div>	
+        </div>	
+    </div>	
+</div>

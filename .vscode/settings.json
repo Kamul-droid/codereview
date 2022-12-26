@@ -1,0 +1,6 @@
+{
+    "terminal.explorerKind": "external",
+    "terminal.integrated.automationProfile.windows": {
+    "path": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio 2022\\Visual Studio Tools\\Developer Command Prompt for VS 2022.lnk"
+    }
+}
